@@ -6,6 +6,7 @@ import {TranslateModule} from '@ngx-translate/core';
 import {HttpClientModule} from '@angular/common/http';
 import {AppSettings} from './app.settings';
 import {TranslationService} from './services/translation/translation.service';
+import {MapModule} from './map/map.module';
 
 export function createLocaleIdFactory(translationService: TranslationService) {
   return translationService.currentLanguageCode || AppSettings.defaultLanguageCode;
@@ -13,7 +14,7 @@ export function createLocaleIdFactory(translationService: TranslationService) {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, TranslateModule.forRoot(AppSettings.translationConfig)],
+  imports: [BrowserModule, HttpClientModule, TranslateModule.forRoot(AppSettings.translationConfig), MapModule],
   providers: [
     {
       provide: LOCALE_ID,
