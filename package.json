@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "postinstall": "rm -rf .husky && husky install && husky add .husky/pre-commit \"npm run precommit\"",
     "precommit": "lint-staged"
   },
   "private": true,
